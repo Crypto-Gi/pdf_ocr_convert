@@ -1,0 +1,11 @@
+services:
+  pdf-ocr-converter:
+    build: .
+    container_name: pdf-ocr-converter
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./uploads:/app/uploads
+    env_file:
+      - .env
+    restart: unless-stopped
